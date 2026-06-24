@@ -1,0 +1,12 @@
+{
+	"private": true,
+	"engines": { "npm": ">=6 <=10" },
+	"workspaces": ["backend", "frontend"],
+	"scripts": {
+		"start": "concurrently --names backend,frontend --prefix-colors blue,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+		"clean-install": "rm -rf node_modules package-lock.json && npx -p npm@10 npm install"
+	},
+	"devDependencies": {
+		"concurrently": "^10.0.3"
+	}
+}
