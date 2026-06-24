@@ -24,5 +24,8 @@ export type JobDetail = {
 	id: string;
 	createdAt: string;
 	status: string;
+	totalCount: number;
+	successCount: number;
+	errorCount: number;
 	urls: UrlResult[];
 };

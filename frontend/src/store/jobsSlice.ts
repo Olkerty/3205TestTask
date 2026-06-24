@@ -106,6 +106,16 @@ const jobsSlice = createSlice({
 				if (state.activeJobId === action.payload.id) {
 					state.activeJob = action.payload;
 				}
+				const idx = state.jobs.findIndex(j => j.id === action.payload.id);
+				if (idx !== -1) {
+					state.jobs[idx].status = action.payload.status;
+					if (action.payload.successCount !== undefined) {
+						state.jobs[idx].successCount = action.payload.successCount;
+					}
+					if (action.payload.errorCount !== undefined) {
+						state.jobs[idx].errorCount = action.payload.errorCount;
+					}
+				}
 			})
 			.addCase(fetchJobDetail.rejected, (state, action) => {
 				state.detailLoading = false;

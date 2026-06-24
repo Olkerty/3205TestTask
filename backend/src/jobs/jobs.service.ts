@@ -72,6 +72,9 @@ export class JobsService {
 			id: job.id,
 			createdAt: job.createdAt,
 			status: job.status,
+			totalCount: job.totalCount,
+			successCount: job.successCount,
+			errorCount: job.errorCount,
 			urls: job.urls
 		};
 	}
